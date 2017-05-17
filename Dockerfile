@@ -10,7 +10,7 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main" > /etc/
 RUN gpg --keyserver keys.gnupg.net --recv-keys ACCC4CF8
 RUN gpg --export --armor ACCC4CF8|apt-key add -
 
-RUN apt-get install postgresql postgresql-contrib postgresql-common
+RUN apt-get install -y postgresql postgresql-contrib postgresql-common
 RUN apt-get clean
 
 RUN echo "/etc/init.d/postgresql start && exit 0" > /etc/rc.local
