@@ -5,7 +5,7 @@ RUN apt-get autoremove
 
 RUN groupadd -r postgres --gid=999 && useradd -r -g postgres --uid=999 postgres
 
-RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main 9.4" > /etc/apt/sources.list.d/pgdg.list
+RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main wheezy 9.3" > /etc/apt/sources.list.d/pgdg.list
 
 RUN gpg --keyserver keys.gnupg.net --recv-keys ACCC4CF8
 RUN gpg --export --armor ACCC4CF8|apt-key add -
