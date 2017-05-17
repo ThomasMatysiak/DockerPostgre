@@ -10,7 +10,7 @@ RUN echo "deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main 9.4" > /
 RUN gpg --keyserver keys.gnupg.net --recv-keys ACCC4CF8
 RUN gpg --export --armor ACCC4CF8|apt-key add -
 
-RUN apt-get install -y postgresql-9.4 && rm -rf /var/lib/apt/lists/*
+RUN apt-get install -y libpq-dev postgresql-9.4 postgresql-common postgresql-contrib-9.4 postgresql-client-9.4 && rm -rf /var/lib/apt/lists/*
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN echo "/etc/init.d/postgresql start && exit 0" > /etc/rc.local
